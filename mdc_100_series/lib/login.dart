@@ -14,6 +14,7 @@
 
 import 'package:flutter/material.dart';
 
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -23,6 +24,8 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   // TODO: Add text editing controllers (101)
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,15 +36,72 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 80.0),
             Column(
               children: <Widget>[
-                Image.asset('assets/diamond.png'),
+                Image.asset('assets/sglogo.png'),
                 const SizedBox(height: 16.0),
-                const Text('SHRINE'),
+                const Text('pouchy'),
               ],
             ),
             const SizedBox(height: 120.0),
             // TODO: Remove filled: true values (103)
             // TODO: Add TextField widgets (101)
+            // [Name]
+              TextField(
+                // [Password]
+                controller: _usernameController,
+                decoration: const InputDecoration(
+                  fillColor: Color.fromARGB(131, 255, 212, 212),
+                  filled: true,
+                  labelText: 'Username',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              // spacer
+              const SizedBox(height: 40.0),
+              // [Password]
+              TextField(
+                controller: _passwordController,
+                decoration: const InputDecoration(
+                  fillColor: Color.fromARGB(131, 255, 212, 212),
+                  filled: true,
+                  labelText: 'Password',
+                  border: OutlineInputBorder(),
+                ),
+                obscureText: true,
+              ),
+
+              // spaces betweeen next and password
+            const SizedBox(height: 30.0),
+
             // TODO: Add button bar (101)
+            OverflowBar(
+              alignment: MainAxisAlignment.end,
+              // TODO: Add a beveled rectangular border to CANCEL (103)
+              children: <Widget>[
+                // TODO: Add buttons (101)
+                TextButton(
+                  style: TextButton.styleFrom(
+                    foregroundColor: const Color.fromARGB(255, 204, 88, 125), // warna teks
+                  ),
+                  child: const Text('CANCEL'),
+                  onPressed: () {
+                    _usernameController.clear();
+                    _passwordController.clear();
+                  },
+                ),
+                // TODO: Add an elevation to NEXT (103)
+                // TODO: Add a beveled rectangular border to NEXT (103)
+                TextButton(
+                  style: TextButton.styleFrom(
+                    foregroundColor: const Color.fromARGB(255, 110, 56, 73), // warna teks
+                  ),
+                  child: const Text('NEXT'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+
+              ],
+            ),
           ],
         ),
       ),
