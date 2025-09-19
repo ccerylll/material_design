@@ -19,7 +19,6 @@ import 'product_columns.dart';
 
 class AsymmetricView extends StatelessWidget {
   final List<Product> products;
-
   const AsymmetricView({Key? key, required this.products}) : super(key: key);
 
   List<Widget> _buildColumns(BuildContext context) {

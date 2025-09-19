@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-const kShrinePink50 = Color(0xFFFEEAE6);
-const kShrinePink100 = Color(0xFFFEDBD0);
-const kShrinePink300 = Color(0xFFFBB8AC);
-const kShrinePink400 = Color(0xFFEAA4A4);
+const kShrinePink50 = Color(0xFFFBF9D1);
+const kShrinePink100 = Color(0xFFE6CFA9);
+const kShrinePink300 = Color(0xFFC1856D);
+const kShrinePink400 = Color(0xFF9A3F3F);
 
 const kShrineBrown900 = Color(0xFF442B2D);
 
